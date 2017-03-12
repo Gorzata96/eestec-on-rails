@@ -9,7 +9,7 @@
       <th>Description</th>
       <th>Date of birth</th>
       <th>Accepted</th>
-      <th colspan="4"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -24,6 +24,7 @@
         <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
         <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Accept', "/accept/#{submission.id}", method: :post %></td>
+        <td><%= link_to 'Reject', "/reject/#{submission.id}", method: :post %></td>
       </tr>
     <% end %>
   </tbody>

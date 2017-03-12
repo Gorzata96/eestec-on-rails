@@ -17,6 +17,16 @@ class SubmissionsController < ApplicationController
     redirect_to :submissions
   end
 
+  def reject
+    id = params[:id]
+    # puts "\n\n\nTo jest moje id: #{id} \n\n\n"
+    # zaakceptuj zgłoszenie:
+    submission = Submission.find(id)  #wyciągamy rekord z BD
+    submission.accepted = false  #zmieniamy rekord
+    submission.save #zapisujemy
+    redirect_to :submissions
+  end
+
   # GET /submissions/1
   # GET /submissions/1.json
   def show
