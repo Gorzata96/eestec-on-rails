@@ -8,8 +8,12 @@ class SubmissionsController < ApplicationController
   end
 
   def accept
-    # zaakceptuj zgłoszenie
-
+    id = params[:id]
+    # puts "\n\n\nTo jest moje id: #{id} \n\n\n"
+    # zaakceptuj zgłoszenie:
+    submission = Submission.find(id)  #wyciągamy rekord z BD
+    submission.accepted = true  #zmieniamy rekord
+    submission.save #zapisujemy
     redirect_to :submissions
   end
 
