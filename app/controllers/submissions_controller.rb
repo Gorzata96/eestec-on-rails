@@ -7,6 +7,12 @@ class SubmissionsController < ApplicationController
     @submissions = Submission.all
   end
 
+  def accept
+    # zaakceptuj zgłoszenie
+
+    redirect_to :submissions
+  end
+
   # GET /submissions/1
   # GET /submissions/1.json
   def show

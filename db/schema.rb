@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312105132) do
+ActiveRecord::Schema.define(version: 20170312115728) do
 
   create_table "submissions", force: :cascade do |t|
     t.string   "name"
     t.string   "desription"
     t.date     "date_of_birth"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "accepted",      default: false
   end
 
 end
